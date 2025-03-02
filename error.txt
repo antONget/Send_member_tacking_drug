@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/event/telegram.py", line 113, in trigger
+    result, data = await handler.check(event, **kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/event/handler.py", line 94, in check
+    check = await event_filter.call(*args, **kwargs)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/filter/admin_filter.py", line 22, in __call__
+    return await check_super_admin(telegram_id=message.chat.id)
+  File "/Users/antonponomarev/PycharmProjects/RememberTackinDrug/venv/lib/python3.10/site-packages/pydantic/main.py", line 891, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'CallbackQuery' object has no attribute 'chat'
